@@ -60,4 +60,5 @@ loop do
   opcao = menu()
 end
 
+puts
 puts 'Obrigado por usar o Cookbook!'
