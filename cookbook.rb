@@ -6,9 +6,8 @@ def menu
   puts "[1] Cadastrar uma receita"
   puts "[2] Ver todas as receitas"
   puts "[3] Sair"
-  
+
   print "Escolha uma opção: "
-  return gets.to_i()
   puts
 end
 
@@ -16,7 +15,8 @@ bem_vindo()
 
 receitas = []
 
-opcao = menu ()
+menu()
+opcao = gets.to_i() #transforma o gets em um inteiro que por padrao eh string
 
 while(opcao != 3) do
   if (opcao == 1)
@@ -39,7 +39,8 @@ while(opcao != 3) do
     puts "Opção Inválida"
   end
 
-  opcao = menu()
+  menu()
+  opcao = gets.to_i()
 end
 
 puts 'Obrigado por usar o Cookbook!'
