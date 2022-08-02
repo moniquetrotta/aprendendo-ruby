@@ -10,15 +10,20 @@ print "Escolha uma opção: "
 opcao = gets.to_i() #transforma o gets em um inteiro que por padrao eh string
 
 while(opcao != 3) do
-  puts "Digite o nome da receita: "
-  nome = gets.chomp() #chomp retira o /n do final da string
-  receitas << nome
-  puts
-  puts "Receita #{nome} cadastrada com sucesso!"
-  puts
-  puts "========== Receitas Cadastradas=========="
-  puts receitas  #faz o loop de um for ou each
-  puts
+  if (opcao == 1)
+    puts "Digite o nome da receita: "
+    nome = gets.chomp() #chomp retira o /n do final da string
+    receitas << nome
+    puts
+    puts "Receita #{nome} cadastrada com sucesso!"
+    puts
+  elsif
+    puts "========== Receitas Cadastradas=========="
+    puts receitas  #faz o loop de um for ou each
+    puts
+  else
+    puts "Opção Inválida"
+  end
 end
 
 puts 'Obrigado por usar o Cookbook!'
