@@ -9,38 +9,45 @@ def menu
 
   print "Escolha uma opção: "
   puts
+  return gets.to_i()
+end
+
+def inserir_receita()
+  puts "Digite o nome da receita: "
+  nome = gets.chomp() #chomp retira o /n do final da string
+  puts
+  puts "Digite o tipo da receita: "
+  tipo = gets.chomp()
+  puts
+  puts "Receita #{nome} cadastrada com sucesso!"
+  puts
+  return {nome: nome, tipo: tipo}
+end
+
+def imprimir_receitas(r)
+  puts "========== Receitas Cadastradas=========="
+  r.each do |receita|
+  puts "#{receita[:nome]} - #{receita[:tipo]}"  
+  end
 end
 
 bem_vindo()
 
 receitas = []
 
-menu()
-opcao = gets.to_i() #transforma o gets em um inteiro que por padrao eh string
+opcao = menu()
 
 while(opcao != 3) do
   if (opcao == 1)
-    puts "Digite o nome da receita: "
-    nome = gets.chomp() #chomp retira o /n do final da string
-    puts
-    puts "Digite o tipo da receita: "
-    tipo = gets.chomp()
-    receitas << {nome: nome, tipo: tipo}
-    puts
-    puts "Receita #{nome} cadastrada com sucesso!"
-    puts
+    receitas << inserir_receita()
   elsif (opcao == 2)
-    puts "========== Receitas Cadastradas=========="
-    receitas.each do |receita|
-      puts "#{receita[:nome]} - #{receita[:tipo]}"  
-    end
+    imprimir_receitas(receitas)
     puts
   else
     puts "Opção Inválida"
   end
 
-  menu()
-  opcao = gets.to_i()
+  opcao = menu()
 end
 
 puts 'Obrigado por usar o Cookbook!'
