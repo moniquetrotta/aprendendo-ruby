@@ -10,11 +10,13 @@ while(true) do
   puts "Receita #{nome} cadastrada com sucesso!"
   puts
   puts "========== Receitas Cadastradas=========="
+  puts receitas  
   #for receita in receitas do
   #  puts receita
   #end
-  receitas.each do |receita|
-    puts receita
-  end
+  
+  #receitas.each do |receita|
+  #  puts receita
+  #end
   puts
 end
