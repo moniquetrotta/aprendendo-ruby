@@ -30,10 +30,13 @@ def inserir_receita()
   return {nome: nome, tipo: tipo}
 end
 
-def imprimir_receitas(r)
+def imprimir_receitas(receitas)
   puts "========== Receitas Cadastradas=========="
-  r.each do |receita|
+  receitas.each do |receita|
   puts "#{receita[:nome]} - #{receita[:tipo]}"  
+  end
+  if receitas.empty?
+    puts "Nenhuma receita cadastrada"
   end
 end
 
