@@ -2,21 +2,23 @@ puts "Bem-vindo ao Cookbook, sua rede social de receitas"
 
 receitas = []
 
-while(true) do
+puts "[1] Cadastrar uma receita"
+puts "[2] Ver todas as receitas"
+puts "[3] Sair"
+
+print "Escolha uma opção: "
+opcao = gets.to_i() #transforma o gets em um inteiro que por padrao eh string
+
+while(opcao != 3) do
   puts "Digite o nome da receita: "
-  nome = gets.chomp()
+  nome = gets.chomp() #chomp retira o /n do final da string
   receitas << nome
   puts
   puts "Receita #{nome} cadastrada com sucesso!"
   puts
   puts "========== Receitas Cadastradas=========="
-  puts receitas  
-  #for receita in receitas do
-  #  puts receita
-  #end
-  
-  #receitas.each do |receita|
-  #  puts receita
-  #end
+  puts receitas  #faz o loop de um for ou each
   puts
 end
+
+puts 'Obrigado por usar o Cookbook!'
