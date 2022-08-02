@@ -46,12 +46,13 @@ receitas = []
 
 opcao = menu()
 
-while(opcao != SAIR) do
+loop do
   if (opcao == INSERIR_RECEITA)
     receitas << inserir_receita()
   elsif (opcao == VISUALIZAR_RECEITAS)
     imprimir_receitas(receitas)
-    puts
+  elsif (opcao == SAIR)
+    break
   else
     puts "Opção Inválida"
   end
