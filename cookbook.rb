@@ -17,13 +17,19 @@ while(opcao != 3) do
     puts
     puts "Receita #{nome} cadastrada com sucesso!"
     puts
-  elsif
+  elsif (opcao == 2)
     puts "========== Receitas Cadastradas=========="
     puts receitas  #faz o loop de um for ou each
     puts
   else
     puts "Opção Inválida"
   end
+
+  puts "[1] Cadastrar uma receita"
+  puts "[2] Ver todas as receitas"
+  puts "[3] Sair"
+  print "Escolha uma opção: "
+  opcao = gets.to_i()
 end
 
 puts 'Obrigado por usar o Cookbook!'
